@@ -39,8 +39,7 @@ class EyelinkProcessor:
                 print(f"Saltando procesamiento para {file_path} debido a la falta de datos válidos.")
                 continue
             
-            # Aquí ya no llamamos a load_and_process_eyelink_data con file_path,
-            # porque ya lo estamos procesando dentro del flujo actual
+            
             raw_et = self.filter_eyelink_data(cleaned_file)
             
             # Si los datos son válidos, entonces puedes trabajar con ellos
