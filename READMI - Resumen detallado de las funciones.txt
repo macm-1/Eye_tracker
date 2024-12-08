@@ -1,4 +1,4 @@
-Resumen detallado de las funciones más importantes
+Resumen detallado de las funciones más importantes (esto solamente respecto a Eye_tracker_ET.py, pero lamentablemente no funcionó adecuadamente).
 
 1.	process_all_subjects
 Procesa múltiples archivos de EyeLink iterativamente. Para cada archivo, filtra eventos como sacadas y blinks, selecciona canales de pupila ('LEFT' o 'RIGHT') y aplica filtros de frecuencia (0.5-30 Hz) para eliminar ruido. Si el archivo contiene datos válidos, genera gráficos para visualizar los resultados procesados.
