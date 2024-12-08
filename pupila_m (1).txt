@@ -1,0 +1,34 @@
+import mne
+import numpy as np
+import matplotlib.pyplot as plt
+
+eyelink_file_path = "D:/MOT/preliminares/YCollio.asc"
+
+raw_et = mne.io.read_raw_eyelink(eyelink_file_path, create_annotations=True)
+
+# Get events and event_ids from annotations
+et_events, et_event_ids = mne.events_from_annotations(raw_et)
+
+# Search for 'left' or 'right' in channel names
+for ch_name in raw_et.ch_names:
+    if 'left' in ch_name:
+        pupil = 'pupil_left'
+    elif 'right' in ch_name:
+        pupil = 'pupil_right'
+
+raw_et.pick([pupil])
+
+int_et = raw_et.copy()
+
+# raw_et.plot(scalings=dict(eyegaze=1e3))
+#Plot the interpolated data with a custom scaling for the eyegaze channel
+
+int_et.pick([pupil])
+
+inter = ['BAD_blink']
+int_et=mne.preprocessing.eyetracking.interpolate_blinks(int_et, (0.01, 0.01), match=inter)
+
+int_et.plot(scalings=dict(eyegaze=1e3))
+
+# raw_et.plot(scalings=dict(eyegaze=1e3))
+
