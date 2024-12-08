@@ -173,7 +173,7 @@ Finalmente se define el main y la forma de llamarlo desde la terminal o bash.
 se escribe: python código_files_csv.py para abrirlo desde la terminal, se ejecutará el plot de los datos.
 
 
-# Respecto a Eye_tracker_ET.py Se deja solamente como muestra ejemplo de un intento iterativo.
+# Respecto a Eye_tracker_ET.py Se deja solamente como muestra ejemplo de un intento iterativo, puesto que se presentó en clases
 
 este contiene estas funciones importantes, pero no logró funcionar adecuadamente, se reemplaza por ET.py
 
