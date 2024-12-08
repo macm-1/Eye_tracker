@@ -1,4 +1,13 @@
-# Son 2 códigos, pero el funcional es solo uno, el otro es solo de ejemplo, se debe ignorar todo y solamente utilizar ET.py
+# Respecto a las carpetas, se creó la carpeta "a git-hub" para dejar todos los archivos realmente necesarios en el repositorio, se incluyó:
+- script ET.py junto con su plot ET.png
+- script código_files_csv junto con su plot "csv.png [0]"
+- los datos del sujeto sAMozo. Tanto los datos completos .csv como los datos recortados a la mitad del archivo .asc
+- El informe de la investigación como fundamento teórico de los scripts
+
+# Se debe usar solo lo que está contenido en la carpeta "a git-hub", los demás son solamente intentos fallidos del pasado que deben ser ignorados.
+
+
+# Son 2 códigos importantes, pero el más funcional es ET.py, el otro (Código_files_csv.py) es sólo un ejemplo, aún no esta terminado, pero deberían funcionar ambos.
 hubo un error al subir los archivos a git-hub.
 
 # respecto a ET.py 
@@ -136,5 +145,33 @@ pip install mne
 
 
 ##################################################################################################################
+
+
+
+
+# Respecto al script código_files_csv que lee archivos csv
+
+El archivo .csv es un archivo de 7 columnas:
+Abs_Time, Block_Idx, Trial_Idx, n_Targets, Asked_for_target, Response_type, Response_Time
+
+lo que hace el script es básicamente leer los datos de los archivos que tengan .csv en la parte final de su numbre dentro de la carpeta del directorio donde está guardado código_files_csv.py
+y convertirlos a un df, luego crear un archivo para cada columna y después juntarlas respecto al interés:
+
+Se convierten a datos numéricos con .to_numeric
+y se elimnan las columnas con NaN en 'Response_Time'
+
+luego se filtra el df respecto a la columna 'n_Targets' respecto al valor 2.
+
+luego calcula el promedio y la desviación estándar de 'Response_Time' por 'Abs_Time'
+
+y se usan para graficar el promedio de los tiempos de respuesta en función del tiempo absoluto.
+
+se guarda el archivo como "csv_files[0]" (se puede cambiar el nombre respecto al sujeto analizado)
+
+Finalmente se define el main y la forma de llamarlo desde la terminal o bash.
+
+se escribe: python código_files_csv.py para abrirlo desde la terminal, se ejecutará el plot de los datos.
+
+
 
 
